@@ -5840,9 +5840,15 @@ class ObjectIds(object):
     OpcUa_BinarySchema_FieldTargetDataType_DictionaryFragment = 14881
     CertificateExpirationAlarmType_ExpirationLimit = 14900
     DataSetToWriter = 14936
-    DataTypeDictionaryType_Deprecated = 15001
-    MaxCharacters = 15002
-    ServerType_UrisVersion = 15003
+
+    # DataTypeDictionaryType_Deprecated = 15001
+    # MaxCharacters = 15002
+    # ServerType_UrisVersion = 15003
+    # VisualComponentNodeId
+    VisualComponentNodeId = 15001
+    ComponentsNodeId = 15003
+    VC_ApplicationNodeId = 15001
+
     Server_UrisVersion = 15004
     SimpleTypeDescription = 15005
     UABinaryFileDataType = 15006

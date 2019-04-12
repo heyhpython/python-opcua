@@ -29,7 +29,6 @@ def _to_nodeid(nodeid):
 
 
 class Node(object):
-
     """
     High level node object, to access node attribute,
     browse and populate address space.
@@ -50,7 +49,9 @@ class Node(object):
         elif isinstance(nodeid, int):
             self.nodeid = ua.NodeId(nodeid, 0)
         else:
-            raise ua.UaError("argument to node must be a NodeId object or a string defining a nodeid found {0} of type {1}".format(nodeid, type(nodeid)))
+            raise ua.UaError(
+                "argument to node must be a NodeId object or a string defining a nodeid found {0} of type {1}".format(
+                    nodeid, type(nodeid)))
 
     def __eq__(self, other):
         if isinstance(other, Node) and self.nodeid == other.nodeid:
@@ -62,6 +63,7 @@ class Node(object):
 
     def __str__(self):
         return "Node({0})".format(self.nodeid)
+
     __repr__ = __str__
 
     def __hash__(self):
@@ -126,7 +128,8 @@ class Node(object):
         :param values: an iterable of EventNotifier enum values.
         """
         event_notifier_bitfield = ua.EventNotifier.to_bitfield(values)
-        self.set_attribute(ua.AttributeIds.EventNotifier, ua.DataValue(ua.Variant(event_notifier_bitfield, ua.VariantType.Byte)))
+        self.set_attribute(ua.AttributeIds.EventNotifier,
+                           ua.DataValue(ua.Variant(event_notifier_bitfield, ua.VariantType.Byte)))
 
     def get_node_class(self):
         """
@@ -333,7 +336,8 @@ class Node(object):
         """
         return self.get_children(refs=ua.ObjectIds.HasComponent, nodeclassmask=ua.NodeClass.Method)
 
-    def get_children_descriptions(self, refs=ua.ObjectIds.HierarchicalReferences, nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
+    def get_children_descriptions(self, refs=ua.ObjectIds.HierarchicalReferences,
+                                  nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
         return self.get_references(refs, ua.BrowseDirection.Forward, nodeclassmask, includesubtypes)
 
     def get_encoding_refs(self):
@@ -342,7 +346,8 @@ class Node(object):
     def get_description_refs(self):
         return self.get_referenced_nodes(ua.ObjectIds.HasDescription, ua.BrowseDirection.Forward)
 
-    def get_references(self, refs=ua.ObjectIds.References, direction=ua.BrowseDirection.Both, nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
+    def get_references(self, refs=ua.ObjectIds.References, direction=ua.BrowseDirection.Both,
+                       nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
         """
         returns references of the node based on specific filter defined with:
 
@@ -378,7 +383,8 @@ class Node(object):
             references.extend(results[0].References)
         return references
 
-    def get_referenced_nodes(self, refs=ua.ObjectIds.References, direction=ua.BrowseDirection.Both, nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
+    def get_referenced_nodes(self, refs=ua.ObjectIds.References, direction=ua.BrowseDirection.Both,
+                             nodeclassmask=ua.NodeClass.Unspecified, includesubtypes=True):
         """
         returns referenced nodes based on specific filter
         Paramters are the same as for get_references
@@ -432,7 +438,7 @@ class Node(object):
             if len(refs) > 0:
                 path.insert(0, refs[0])
                 node = Node(self.server, refs[0].NodeId)
-                if len(path) >= (max_length -1):
+                if len(path) >= (max_length - 1):
                     return path
             else:
                 return path
@@ -583,7 +589,7 @@ class Node(object):
             r.check()
         return nodes
 
-    def _fill_delete_reference_item(self, rdesc, bidirectional = False):
+    def _fill_delete_reference_item(self, rdesc, bidirectional=False):
         ditem = ua.DeleteReferencesItem()
         ditem.SourceNodeId = self.nodeid
         ditem.TargetNodeId = rdesc.NodeId
@@ -650,7 +656,7 @@ class Node(object):
             self.add_reference(rule, ua.ObjectIds.HasModellingRule, True, False)
 
     def add_folder(self, nodeid, bname):
-        return  opcua.common.manage_nodes.create_folder(self, nodeid, bname)
+        return opcua.common.manage_nodes.create_folder(self, nodeid, bname)
 
     def add_object(self, nodeid, bname, objecttype=None):
         return opcua.common.manage_nodes.create_object(self, nodeid, bname, objecttype)
