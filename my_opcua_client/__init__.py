@@ -1,7 +1,7 @@
 # coding=utf-8
 import logging
 
-logging.basicConfig(level=logging.ERROR,
+logging.basicConfig(level=logging.WARNING,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%Y-%H:%M:%S',
                     )
