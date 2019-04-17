@@ -25,7 +25,7 @@ from opcua.common.connection import MessageChunk
 class TestUnit(unittest.TestCase):
 
     '''
-    Simple unit test that do not need to setup a server or a client
+    Simple unit test that do not need to setup a server or a my_opcua_client
     '''
 
     def test_variant_array_none(self):

@@ -124,7 +124,7 @@ if __name__ == "__main__":
     
     try:
         while True:
-            # from an OPC UA client write a value to this node to see it show up in the python object
+            # from an OPC UA my_opcua_client write a value to this node to see it show up in the python object
             print('Python mirror of MyClientWrite is: ' + str(my_python_obj.MyClientWrite))
 
             # write a single attr to OPC UA

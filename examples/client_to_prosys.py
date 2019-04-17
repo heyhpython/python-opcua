@@ -24,8 +24,8 @@ if __name__ == "__main__":
     #from IPython import embed
     logging.basicConfig(level=logging.DEBUG)
     client = Client("opc.tcp://localhost:53530/OPCUA/SimulationServer/")
-    #client = Client("opc.tcp://olivier:olivierpass@localhost:53530/OPCUA/SimulationServer/")
-    #client.set_security_string("Basic256Sha256,SignAndEncrypt,certificate-example.der,private-key-example.pem")
+    #my_opcua_client = Client("opc.tcp://olivier:olivierpass@localhost:53530/OPCUA/SimulationServer/")
+    #my_opcua_client.set_security_string("Basic256Sha256,SignAndEncrypt,certificate-example.der,private-key-example.pem")
     try:
         client.connect()
         root = client.get_root_node()
@@ -62,6 +62,6 @@ if __name__ == "__main__":
         time.sleep(3)
         sub.unsubscribe(handle)
         sub.delete()
-        #client.close_session()
+        #my_opcua_client.close_session()
     finally:
         client.disconnect()

@@ -484,9 +484,9 @@ class UaProcessor(object):
 
     def close(self):
         """
-        to be called when client has disconnected to ensure we really close
+        to be called when my_opcua_client has disconnected to ensure we really close
         everything we should
         """
-        self.logger.info("Cleanup client connection: %s", self.name)
+        self.logger.info("Cleanup my_opcua_client connection: %s", self.name)
         if self.session:
             self.session.close_session(True)

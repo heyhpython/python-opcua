@@ -8,7 +8,7 @@ from opcua import Client
 if __name__ == "__main__":
 
     client = Client("opc.tcp://localhost:4840/freeopcua/server/")
-    # client = Client("opc.tcp://admin@localhost:4840/freeopcua/server/") #connect using a user
+    # my_opcua_client = Client("opc.tcp://admin@localhost:4840/freeopcua/server/") #connect using a user
     try:
         client.connect()
 
@@ -20,8 +20,8 @@ if __name__ == "__main__":
         print("Children of root are: ", root.get_children())
 
         # get a specific node knowing its node id
-        #var = client.get_node(ua.NodeId(1002, 2))
-        #var = client.get_node("ns=3;i=2002")
+        #var = my_opcua_client.get_node(ua.NodeId(1002, 2))
+        #var = my_opcua_client.get_node("ns=3;i=2002")
         #print(var)
         #var.get_data_value() # get value of node as a DataValue object
         #var.get_value() # get value of node as a python builtin

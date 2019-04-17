@@ -13,7 +13,7 @@ class EventGenerator(object):
     """
     Create an event based on an event type. Per default is BaseEventType used.
     Object members are dynamically created from the base event type and send to
-    client when evebt is triggered (see example code in source)
+    my_opcua_client when evebt is triggered (see example code in source)
 
     Arguments to constructor are:
 

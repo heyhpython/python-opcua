@@ -22,8 +22,8 @@ if __name__ == "__main__":
     #from IPython import embed
     logging.basicConfig(level=logging.WARN)
     client = Client("opc.tcp://192.168.56.100:49320/OPCUA/SimulationServer/")
-    #client = Client("opc.tcp://192.168.56.100:4840/OPCUA/SimulationServer/")
-    #client = Client("opc.tcp://olivier:olivierpass@localhost:53530/OPCUA/SimulationServer/")
+    #my_opcua_client = Client("opc.tcp://192.168.56.100:4840/OPCUA/SimulationServer/")
+    #my_opcua_client = Client("opc.tcp://olivier:olivierpass@localhost:53530/OPCUA/SimulationServer/")
     try:
         client.connect()
         root = client.get_root_node()

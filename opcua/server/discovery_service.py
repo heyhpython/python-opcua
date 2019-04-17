@@ -71,11 +71,11 @@ class LocalDiscoveryService(object):
         appDesc = ua.ApplicationDescription()
         appDesc.ApplicationUri = registeredServer.ServerUri
         appDesc.ProductUri = registeredServer.ProductUri
-        # FIXME: select name from client locale
+        # FIXME: select name from my_opcua_client locale
         appDesc.ApplicationName = registeredServer.ServerNames[0]
         appDesc.ApplicationType = registeredServer.ServerType
         appDesc.DiscoveryUrls = registeredServer.DiscoveryUrls
-        # FIXME: select discovery uri using reachability from client network
+        # FIXME: select discovery uri using reachability from my_opcua_client network
         appDesc.GatewayServerUri = registeredServer.GatewayServerUri
         # Create and add ServerDescription, so it is resolved by find_servers().
         srvDesc = LocalDiscoveryService.ServerDescription(appDesc, uaDiscoveryConfiguration)

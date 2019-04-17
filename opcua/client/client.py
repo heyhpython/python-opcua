@@ -77,7 +77,7 @@ class KeepAlive(Thread):
 
 class Client(object):
     """
-    High level client to connect to an OPC-UA server.
+    High level my_opcua_client to connect to an OPC-UA server.
 
     This class makes it easy to connect and browse address space.
     It attempts to expose as much functionality as possible
@@ -104,8 +104,8 @@ class Client(object):
         self._password = self.server_url.password
         self.name = "Pure Python Client"
         self.description = self.name
-        self.application_uri = "urn:freeopcua:client"
-        self.product_uri = "urn:freeopcua.github.io:client"
+        self.application_uri = "urn:freeopcua:my_opcua_client"
+        self.product_uri = "urn:freeopcua.github.io:my_opcua_client"
         self.security_policy = ua.SecurityPolicy()
         self.secure_channel_id = None
         self.secure_channel_timeout = 3600000  # 1 hour
@@ -500,7 +500,7 @@ class Client(object):
         CreateSubscriptionParameters instance. The second option should be used,
         if the opcua-server has problems with the default options.
         These methods will be called when notfication from server are received.
-        See example-client.py.
+        See example-my_opcua_client.py.
         Do not do expensive/slow or network operation from these methods
         since they are called directly from receiving thread. This is a design choice,
         start another thread if you need to do such a thing.

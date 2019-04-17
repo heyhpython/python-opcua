@@ -1,5 +1,5 @@
 """
-Support for custom structures in client and server
+Support for custom structures in my_opcua_client and server
 We only support a subset of features but should be enough
 for custom structures
 """

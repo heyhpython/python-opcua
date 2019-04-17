@@ -31,7 +31,7 @@ class SubHandler(object):
 if __name__ == "__main__":
 
     client = Client("opc.tcp://localhost:4840/freeopcua/server/")
-    # client = Client("opc.tcp://admin@localhost:4840/freeopcua/server/") #connect using a user
+    # my_opcua_client = Client("opc.tcp://admin@localhost:4840/freeopcua/server/") #connect using a user
     try:
         client.connect()
 

@@ -13,7 +13,7 @@ from opcua.client.client import Client
 
 class RegistrationService(object):
     DEF_DISCOVERY_URL = "opc.tcp://localhost:4840" # By OPC-UA specification.
-    MAX_CLIENT = 32 # [-] Max. number of simultaneous client connections.
+    MAX_CLIENT = 32 # [-] Max. number of simultaneous my_opcua_client connections.
     DEF_REGINT = 60 # [sec] Default re-registration interval.
     MIN_REGINT = 10 # [sec] Minimal re-registration interval.
 
@@ -49,7 +49,7 @@ class RegistrationService(object):
             if client.server_url.netloc != netloc:
                 continue
             raise Exception('Already registering to discovery server: {:s}'.format(discoveryUrl))
-        # Create and store client connection to discovery server.
+        # Create and store my_opcua_client connection to discovery server.
         registrationClient = Client(discoveryUrl)
         registrationClient.connect()
         self._registration_clients.append(registrationClient)
@@ -74,7 +74,7 @@ class RegistrationService(object):
     def _renew_registration(self, serverToRegister, registrationClient, period=DEF_REGINT):
         # Send registration request to discovery server.
         try:
-            with self._lock: # So we don't client.disconnect() from main thread.
+            with self._lock: # So we don't my_opcua_client.disconnect() from main thread.
                 if registrationClient not in self._registration_clients:
                     return
                 self._register_server(serverToRegister, registrationClient)

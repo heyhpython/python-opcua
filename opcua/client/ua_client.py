@@ -1,5 +1,5 @@
 """
-Low level binary client
+Low level binary my_opcua_client
 """
 
 import logging
@@ -217,7 +217,7 @@ class UASocketClient(object):
 class UaClient(object):
 
     """
-    low level OPC-UA client.
+    low level OPC-UA my_opcua_client.
 
     It implements (almost) all methods defined in opcua spec
     taking in argument the structures defined in opcua spec.
@@ -474,7 +474,7 @@ class UaClient(object):
             # We could remove the callback already when sending the DeleteSubscription request,
             # but there are some legitimate reasons to keep them around, such as when the server
             # responds with "BadTimeout" and we should try again later instead of just removing
-            # the subscription client-side.
+            # the subscription my_opcua_client-side.
             #
             # There are a variety of ways to act correctly, but the most practical solution seems
             # to be to just ignore any BadNoSubscription responses.
@@ -503,7 +503,7 @@ class UaClient(object):
         # do callback
         try:
             callback(response.Parameters)
-        except Exception:  # we call client code, catch everything!
+        except Exception:  # we call my_opcua_client code, catch everything!
             self.logger.exception("Exception while calling user callback: %s")
 
     def create_monitored_items(self, params):

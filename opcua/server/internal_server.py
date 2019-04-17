@@ -183,7 +183,7 @@ class InternalServer(object):
     def get_endpoints(self, params=None, sockname=None):
         self.logger.info("get endpoint")
         if sockname:
-            # return to client the ip address it has access to
+            # return to my_opcua_client the ip address it has access to
             edps = []
             for edp in self.endpoints:
                 edp1 = copy(edp)

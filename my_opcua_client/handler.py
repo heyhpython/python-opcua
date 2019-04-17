@@ -17,14 +17,15 @@ class SubHandler(object):
 
     def datachange_notification(self, node: Node, val, data):
         # todo find out the data pattern
-        logger.error(node.nodeid.Identifier)
+        # logger.error(node.nodeid.Identifier)
         string_nodeid: str = node.nodeid.Identifier
         property_name, comp_name = string_nodeid.split('-', 1)
-        logger.error(data)
-        logger.error(val)
+        # logger.error(data)
+        # logger.error(val)
         if isinstance(val, bool):
             val = str(val)
         self.redis_client.hset(comp_name, property_name, val)
+        self.redis_client.expire(comp_name, 10)
 
     def event_notification(self, event):
         logger.error(event)

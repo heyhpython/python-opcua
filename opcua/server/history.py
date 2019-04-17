@@ -34,7 +34,7 @@ class HistoryStorageInterface(object):
 
     def read_node_history(self, node_id, start, end, nb_values):
         """
-        Called when a client make a history read request for a node
+        Called when a my_opcua_client make a history read request for a node
         if start or end is missing then nb_values is used to limit query
         nb_values is the max number of values to read. Ignored if 0
         Start time and end time are inclusive
@@ -59,7 +59,7 @@ class HistoryStorageInterface(object):
 
     def read_event_history(self, source_id, start, end, nb_values, evfilter):
         """
-        Called when a client make a history read request for events
+        Called when a my_opcua_client make a history read request for events
         Start time and end time are inclusive
         Returns a list of Events and a continuation point which
         is None if all events are read or the SourceTimeStamp of the last rejected event

@@ -242,7 +242,7 @@ class SecurityPolicyFactory(object):
     """
     Helper class for creating server-side SecurityPolicy.
     Server has one certificate and private key, but needs a separate
-    SecurityPolicy for every client and client's certificate
+    SecurityPolicy for every my_opcua_client and my_opcua_client's certificate
     """
 
     def __init__(self, cls=SecurityPolicy, mode=auto.MessageSecurityMode.None_, certificate=None, private_key=None):

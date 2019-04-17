@@ -11,7 +11,7 @@ from opcua import ua
 class SubHandler():
 
     """
-    Dummy subscription client
+    Dummy subscription my_opcua_client
     """
 
     def datachange_notification(self, node, val, data):
@@ -24,7 +24,7 @@ class SubHandler():
 class MySubHandler():
 
     """
-    More advanced subscription client using Future, so we can wait for events in tests
+    More advanced subscription my_opcua_client using Future, so we can wait for events in tests
     """
 
     def __init__(self):

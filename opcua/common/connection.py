@@ -129,7 +129,7 @@ class MessageChunk(ua.FrozenClass):
 
 class SecureConnection(object):
     """
-    Common logic for client and server
+    Common logic for my_opcua_client and server
     """
 
     def __init__(self, security_policy):
@@ -145,7 +145,7 @@ class SecureConnection(object):
 
     def set_channel(self, channel):
         """
-        Called on client side when getting secure channel data from server
+        Called on my_opcua_client side when getting secure channel data from server
         """
         self.channel = channel
         self._open = True

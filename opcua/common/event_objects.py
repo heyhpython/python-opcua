@@ -23,7 +23,7 @@ class BaseEvent(Event):
 
 class AuditEvent(BaseEvent):
     """
-    AuditEvent: A base type for events used to track client initiated changes to the server state.
+    AuditEvent: A base type for events used to track my_opcua_client initiated changes to the server state.
     """
     def __init__(self, sourcenode=None, message=None, severity=1, emitting_node=ua.ObjectIds.Server):
         super(AuditEvent, self).__init__(sourcenode, message, severity, emitting_node=emitting_node)

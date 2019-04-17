@@ -67,8 +67,8 @@ class CommonTests(object):
 
     '''
     Tests that will be run twice. Once on server side and once on
-    client side since we have been carefull to have the exact
-    same api on server and client side
+    my_opcua_client side since we have been carefull to have the exact
+    same api on server and my_opcua_client side
     '''
     # jyst to avoid editor warnings
     opc = None

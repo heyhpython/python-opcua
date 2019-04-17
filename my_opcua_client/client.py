@@ -62,4 +62,6 @@ class Client(C):
 
 if __name__ == '__main__':
     client = Client(vc_url)
+
     client.connect()
+    client.subscribe_event()

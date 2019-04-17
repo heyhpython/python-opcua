@@ -65,11 +65,11 @@ class OPCUAProtocol(asyncio.Protocol):
                 try:
                     hdr = uabin.header_from_binary(buf)
                 except ua.utils.NotEnoughData:
-                    logger.info("We did not receive enough data from client, waiting for more")
+                    logger.info("We did not receive enough data from my_opcua_client, waiting for more")
                     self.data = backup_buf.read(len(backup_buf))
                     return
                 if len(buf) < hdr.body_size:
-                    logger.info("We did not receive enough data from client, waiting for more")
+                    logger.info("We did not receive enough data from my_opcua_client, waiting for more")
                     self.data = backup_buf.read(len(backup_buf))
                     return
                 ret = self.processor.process(hdr, buf)
@@ -80,7 +80,7 @@ class OPCUAProtocol(asyncio.Protocol):
                 if len(buf) == 0:
                     return
             except Exception:
-                logger.exception("Exception raised while parsing message from client, closing")
+                logger.exception("Exception raised while parsing message from my_opcua_client, closing")
                 return
 
 

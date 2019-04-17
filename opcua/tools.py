@@ -462,10 +462,10 @@ def uaclient():
     add_common_args(parser)
     parser.add_argument("-c",
                         "--certificate",
-                        help="set client certificate")
+                        help="set my_opcua_client certificate")
     parser.add_argument("-k",
                         "--private_key",
-                        help="set client private key")
+                        help="set my_opcua_client private key")
     args = parse_args(parser)
 
     client = Client(args.url, timeout=args.timeout)

@@ -8,7 +8,7 @@ if sys.version_info[0] < 3:
 
 setup(name="opcua",
       version="0.98.6",
-      description="Pure Python OPC-UA client and server library",
+      description="Pure Python OPC-UA my_opcua_client and server library",
       author="Olivier Roulet-Dubonnet",
       author_email="olivier.roulet@gmail.com",
       url='http://freeopcua.github.io/',

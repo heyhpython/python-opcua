@@ -167,7 +167,7 @@ class Server(object):
 
     def find_servers(self, uris=None):
         """
-        find_servers. mainly implemented for symmetry with client
+        find_servers. mainly implemented for symmetry with my_opcua_client
         """
         if uris is None:
             uris = []

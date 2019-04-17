@@ -1,5 +1,5 @@
 """
-Test an OPC-UA server with freeopcua python client
+Test an OPC-UA server with freeopcua python my_opcua_client
 """
 import logging
 import sys
@@ -16,7 +16,7 @@ from opcua import Client
 class MySubHandler():
 
     '''
-    More advanced subscription client using Future, so we can wait for events in tests
+    More advanced subscription my_opcua_client using Future, so we can wait for events in tests
     '''
 
     def __init__(self):
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     # FIXME add better arguments parsing with possibility to specify
     # username and password and encryption
     if len(sys.argv) < 2:
-        print("This script is meant to test compatibilty to a server with freeopcua python client library")
+        print("This script is meant to test compatibilty to a server with freeopcua python my_opcua_client library")
         print("Usage: test_server.py url")
         sys.exit(1)
     else:

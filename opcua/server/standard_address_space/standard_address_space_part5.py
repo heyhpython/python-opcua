@@ -15428,7 +15428,7 @@ def create_standard_address_space_Part5(server):
     node.ParentNodeId = NumericNodeId(2041, 0)
     node.ReferenceTypeId = NumericNodeId(45, 0)
     attrs = ua.ObjectTypeAttributes()
-    attrs.Description = LocalizedText("A base type for events used to track client initiated changes to the server state.")
+    attrs.Description = LocalizedText("A base type for events used to track my_opcua_client initiated changes to the server state.")
     attrs.DisplayName = LocalizedText("AuditEventType")
     attrs.IsAbstract = True
     node.NodeAttributes = attrs
@@ -15873,7 +15873,7 @@ def create_standard_address_space_Part5(server):
     node.ReferenceTypeId = NumericNodeId(46, 0)
     node.TypeDefinition = NumericNodeId(68, 0)
     attrs = ua.VariableAttributes()
-    attrs.Description = LocalizedText("The certificate provided by the client.")
+    attrs.Description = LocalizedText("The certificate provided by the my_opcua_client.")
     attrs.DisplayName = LocalizedText("ClientCertificate")
     attrs.DataType = ua.NodeId(ua.ObjectIds.ByteString)
     attrs.ValueRank = -1
@@ -15911,7 +15911,7 @@ def create_standard_address_space_Part5(server):
     node.ReferenceTypeId = NumericNodeId(46, 0)
     node.TypeDefinition = NumericNodeId(68, 0)
     attrs = ua.VariableAttributes()
-    attrs.Description = LocalizedText("The thumbprint for certificate provided by the client.")
+    attrs.Description = LocalizedText("The thumbprint for certificate provided by the my_opcua_client.")
     attrs.DisplayName = LocalizedText("ClientCertificateThumbprint")
     attrs.DataType = ua.NodeId(ua.ObjectIds.String)
     attrs.ValueRank = -1
@@ -16063,7 +16063,7 @@ def create_standard_address_space_Part5(server):
     node.ReferenceTypeId = NumericNodeId(46, 0)
     node.TypeDefinition = NumericNodeId(68, 0)
     attrs = ua.VariableAttributes()
-    attrs.Description = LocalizedText("The lifetime of the channel requested by the client.")
+    attrs.Description = LocalizedText("The lifetime of the channel requested by the my_opcua_client.")
     attrs.DisplayName = LocalizedText("RequestedLifetime")
     attrs.DataType = NumericNodeId(290, 0)
     attrs.ValueRank = -1
@@ -16256,7 +16256,7 @@ def create_standard_address_space_Part5(server):
     node.ReferenceTypeId = NumericNodeId(46, 0)
     node.TypeDefinition = NumericNodeId(68, 0)
     attrs = ua.VariableAttributes()
-    attrs.Description = LocalizedText("The certificate provided by the client.")
+    attrs.Description = LocalizedText("The certificate provided by the my_opcua_client.")
     attrs.DisplayName = LocalizedText("ClientCertificate")
     attrs.DataType = ua.NodeId(ua.ObjectIds.ByteString)
     attrs.ValueRank = -1
@@ -16294,7 +16294,7 @@ def create_standard_address_space_Part5(server):
     node.ReferenceTypeId = NumericNodeId(46, 0)
     node.TypeDefinition = NumericNodeId(68, 0)
     attrs = ua.VariableAttributes()
-    attrs.Description = LocalizedText("The thumbprint of the certificate provided by the client.")
+    attrs.Description = LocalizedText("The thumbprint of the certificate provided by the my_opcua_client.")
     attrs.DisplayName = LocalizedText("ClientCertificateThumbprint")
     attrs.DataType = ua.NodeId(ua.ObjectIds.String)
     attrs.ValueRank = -1

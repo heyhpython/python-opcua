@@ -18,9 +18,9 @@ port_num1 = 48510
 class TestClient(unittest.TestCase, CommonTests, SubscriptionTests, XmlTests):
 
     '''
-    Run common tests on client side
+    Run common tests on my_opcua_client side
     Of course we need a server so we start also start a server
-    Tests that can only be run on client side must be defined  in this class
+    Tests that can only be run on my_opcua_client side must be defined  in this class
     '''
     @classmethod
     def setUpClass(cls):
@@ -31,13 +31,13 @@ class TestClient(unittest.TestCase, CommonTests, SubscriptionTests, XmlTests):
         add_server_custom_enum_struct(cls.srv)
         cls.srv.start()
 
-        # start admin client
+        # start admin my_opcua_client
         # long timeout since travis (automated testing) can be really slow
         cls.clt = Client('opc.tcp://admin@127.0.0.1:{0:d}'.format(port_num1), timeout=10)
         cls.clt.connect()
         cls.opc = cls.clt
 
-        # start anonymous client
+        # start anonymous my_opcua_client
         cls.ro_clt = Client('opc.tcp://127.0.0.1:{0:d}'.format(port_num1))
         cls.ro_clt.connect()
 
@@ -93,22 +93,22 @@ class TestClient(unittest.TestCase, CommonTests, SubscriptionTests, XmlTests):
         def increment_state(self, *args, **kwargs):
             state[0] += 1
 
-        # create client and replace instance methods with dummy methods
+        # create my_opcua_client and replace instance methods with dummy methods
         client = Client('opc.tcp://dummy_address:10000')
         client.connect    = increment_state.__get__(client)
         client.disconnect = increment_state.__get__(client)
 
         assert state[0] == 0
         with client:
-            # test if client connected
+            # test if my_opcua_client connected
             self.assertEqual(state[0], 1)
-        # test if client disconnected
+        # test if my_opcua_client disconnected
         self.assertEqual(state[0], 2)
 
     def test_enumstrings_getvalue(self):
-        ''' The real exception is server side, but is detected by using a client.
+        ''' The real exception is server side, but is detected by using a my_opcua_client.
             Alldue the server trace is also visible on the console.
-            The client only 'sees' an TimeoutError
+            The my_opcua_client only 'sees' an TimeoutError
         '''
         nenumstrings = self.clt.get_node(ua.ObjectIds.AxisScaleEnumeration_EnumStrings)
         with self.assertNotRaises(Exception):
