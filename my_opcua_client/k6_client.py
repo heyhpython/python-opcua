@@ -1,5 +1,5 @@
 # coding=utf-8
-from opcua.client.client import Client as C
+from opcua.client.client import Client as Cgit
 from my_opcua_client.handler import K6Handler
 from opcua.common.node import Node
 
