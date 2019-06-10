@@ -57,3 +57,4 @@ class Client(C):
 if __name__ == '__main__':
     # 先导包
     client = Client(vc_url)
+    client.subscribe_to_robot_axis()
