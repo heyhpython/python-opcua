@@ -61,7 +61,7 @@ class Client(C):
 
 
 if __name__ == '__main__':
+    # 先导包
     client = Client(vc_url)
-
-    client.connect()
-    client.subscribe_event()
+    print(client.comps)
+    client.subscribe_all_comps()
